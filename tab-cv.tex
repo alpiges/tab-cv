@@ -1,0 +1,261 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,10pt]{article} % Default font size and paper size
+
+\usepackage[top=2.2cm, bottom=2.2cm, left=2.2cm, right=2.2cm]{geometry}
+
+\usepackage[utf8]{inputenc}
+% \usepackage{lmodern}
+\usepackage[default]{lato}
+\usepackage[T1]{fontenc}
+
+\usepackage{url,parskip} % Formatting packages
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{supertabular}
+\usepackage{array}
+\usepackage{pbox}
+\usepackage{bold-extra}
+\usepackage{enumitem}
+\usepackage[official]{eurosym}
+\usepackage{fontawesome5}
+
+\usepackage{scrextend}
+\addtokomafont{labelinglabel}{\sffamily}
+
+% colors
+\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
+\definecolor{dgray}{gray}{.25}
+\definecolor{gray}{gray}{.35}
+\definecolor{lgray}{gray}{.6}
+
+\definecolor{mpg}{RGB}{000,125,122}
+\definecolor{lmu}{RGB}{000 148 064}
+\definecolor{dred}{RGB}{130,0,0}
+\definecolor{dblu}{RGB}{0,0,130}
+
+\colorlet{maincolor}{dred}
+
+
+%\usepackage[cm]{fullpage}
+% \textheight = 740pt
+% \textwidth = 410pt
+
+\usepackage{hyperref} % Required for adding links	and customizing them
+\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
+\hypersetup{colorlinks,breaklinks,urlcolor=maincolor,linkcolor=maincolor} % Set link colors throughout the document
+
+% sections and some sort of header
+\usepackage{titlesec} % Used to customize the \section command
+\titleformat{\section}{\bfseries\raggedright\color{maincolor}}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{12pt}{3pt} % Spacing around sections
+
+
+\newcommand{\headline}[1]{\par{\centering
+{\Large\textcolor{maincolor}{#1}}
+\bigskip\par}}
+
+
+\newcommand{\tabspace}{\rule{0pt}{3.5ex}}
+\newcommand{\inst}[1]{{\bfseries{{#1}}}}
+\newcommand{\pos}[1]{{\itshape\textcolor{maincolor}{#1}}}
+\newcommand{\grade}[1]{{\footnotesize[{#1}]}}
+\newcommand{\sgright}[1]{{\hfill\footnotesize\color{dgray}{{#1}}}}
+\newcommand{\yr}[1]{{\footnotesize\color{dgray}{{#1}}}}
+\newcommand{\scb}[1]{{\small\bfseries{#1}}}
+
+\DeclareSymbolFont{stmry}{U}{stmry}{m}{n}
+\DeclareMathSymbol\rightarrowtriangle\mathrel{stmry}{"5F}
+\renewcommand{\to}{$\rightarrowtriangle$~}
+
+
+\begin{document}
+\pagestyle{empty} % Removes page numbering
+
+%----------------------------------------------------------------------------------------
+%	Name
+%----------------------------------------------------------------------------------------
+
+% header
+\headline{JOHN DOE}
+
+%----------------------------------------------------------------------------------------
+%	Contact information
+%----------------------------------------------------------------------------------------
+\bigskip
+\begin{center}
+	Main street 1, 00000 City, Country\\ 
+	\href{mailto:johndoe@provider.com}{\url{johndoe@provider.com}}\\
+	\href{https://github.com/johndoe}{\faGithub \texttt{johndoe}} \hspace{2em} 
+	\href{https://linkedin.com/in/johndoe}{\faLinkedin \texttt{John Doe}}%
+	% \href{https://twitter.com/johndoe}{\faTwitter \texttt{johndoe}}
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%	Experience
+%----------------------------------------------------------------------------------------
+\section{PROFESSIONAL EXPERIENCE}
+\begin{tabularx}{\textwidth}{rX}
+	\yr{07/19 \to 12/22} & \inst{Company} \sgright{City, Country} \newline \pos{Role} \small{this is what I did there}\\
+	\tabspace
+	%------------------------------------------------	
+	\yr{01/15 \to 06/19} & \inst{Previous, Company} \sgright{Other City, Country} \newline \pos{Role} \small{this is what I did there}\\
+	%------------------------------------------------	
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{ACADEMIC EDUCATION}
+
+\begin{tabularx}{\textwidth}{rX}
+%------------------------------------------------
+\yr{09/12 \to 08/15} & 
+			\inst{University} \sgright{City, Country}\newline
+			\pos{Ph.D. in Subject}  \newline
+	      	\small{\emph{Thesis:} Thesis title}\newline
+	      	\small{\emph{Any comments}}\\
+\tabspace
+%------------------------------------------------
+\yr{09/10 \to 08/12} & \inst{University} \sgright{City, Country}\newline
+	       \pos{M. Sc. in Science}\newline 
+		   \small{\emph{Thesis:} Thesis title}\newline
+		   \small{\emph{Any comments}}\\
+\tabspace
+%------------------------------------------------
+\yr{09/07 \to 07/10} & \inst{University} \sgright{City, Country} \newline
+	       \pos{B. Sc. in Science}\\
+%------------------------------------------------
+\end{tabularx}
+
+
+
+%----------------------------------------------------------------------------------------
+%	Awards
+%----------------------------------------------------------------------------------------
+\section{AWARDS}
+\begin{tabularx}{\textwidth}{rX}
+\yr{year} & Name of award\\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	Skills
+%----------------------------------------------------------------------------------------
+\section{SKILLS}
+\begin{tabularx}{\textwidth}{lX}
+\yr{LANGUAGES} & \small{\textbf{English} (native), \textbf{Esperanto} (fluent), \textbf{Wolof} (basic)}\\
+% \tabspace
+\yr{PROGRAMMING} & \small{{Fortran} (\texttt{libraries}), Haskell, LaTeX}
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	Conference contributions
+%----------------------------------------------------------------------------------------
+\section{PUBLICATIONS}
+\begin{tabularx}{\textwidth}{rX}
+	\yr{2022} & First Author, \pos{John Doe}, \& Third Author\newline
+	\textbf{Title}\newline
+	\textit{Venue}\\
+	\tabspace
+	%------------------------------------------------
+	\yr{2021} & \pos{John Doe}, Second Author, \& Third Author\newline
+	\textbf{Title}\newline
+	\textit{Venue}\\
+	\tabspace
+	%------------------------------------------------
+	\yr{2020} & \pos{John Doe}, Second Author, \& Third Author\newline
+	\textbf{Title}\newline
+	\textit{Venue}\\
+	\tabspace
+	%------------------------------------------------
+	\yr{2019} & \pos{John Doe}, Second Author, \& Third Author\newline
+	\textbf{Title}\newline
+	\textit{Venue}\\
+	\tabspace
+	%------------------------------------------------
+	\yr{2018} & \pos{John Doe}, Second Author, \& Third Author\newline
+	\textbf{Title}\newline
+	\textit{Venue}\\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	Conference contributions
+%----------------------------------------------------------------------------------------
+\section{INVITED TALKS}
+\begin{tabularx}{\textwidth}{rX}
+\yr{10/2019}& {\emph{Some Cool Workshop} at Cool Place}\\
+\yr{10/2019}& {\emph{Some Cool Workshop} at Cool Place}\\
+\yr{04/2018}& {\emph{Some Cool Workshop} at Cool Place}\\
+\yr{05/2017}& {\emph{Some Cool Workshop} at Cool Place}\\
+\yr{10/2014}& {\emph{Some Cool Workshop} at Cool Place}\\
+\yr{09/2014}& {\emph{Some Cool Workshop} at Cool Place}
+\end{tabularx}
+
+
+
+%----------------------------------------------------------------------------------------
+%	Teaching
+%----------------------------------------------------------------------------------------
+\section{TEACHING}
+\begin{tabularx}{\textwidth}{lX}
+\multicolumn{2}{l}{\pos{Lecturer}} \\
+\yr{2022} & My first own course, believe it or not\sgright{University} \\
+\\
+%
+\multicolumn{2}{l}{\pos{Teaching assistant}} \\
+\yr{2020} & {Some course}\sgright{University}\\
+\yr{2019} & {Other course}  \sgright{University}\\
+\yr{2019} & {Yet another course} \sgright{University}\\
+\yr{2018} & {Maybe the same as the first course}\sgright{University}\\
+\\
+%
+\multicolumn{2}{l}{\pos{Supervision of students}} \\
+\yr{2022} &  A Master student\\
+\yr{2021} &  Another Master student\\
+\yr{2020} &  A Bachelor student
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	Other stuff, attendances
+%----------------------------------------------------------------------------------------
+\section{OTHER ACTIVITIES}
+\begin{tabularx}{\textwidth}{rX}
+\multicolumn{2}{l}{\pos{Workshops}} \\
+\yr{2022}& {Organized some workshop}\\
+\\
+\multicolumn{2}{l}{\pos{Summer schools and courses taken}} \\
+\yr{2019}& {A really interesting course}\sgright{University}\\
+\yr{01/2019}& {A fun Summer School}\sgright{University, Country}\\
+\yr{07/2018}& {Another Summer School}\sgright{University, Country}\\
+\\
+\multicolumn{2}{l}{\pos{Reviewing}} \\
+\yr{2020}& {Reviewer for AISTATS 2021}\\
+\yr{2020}& {Reviewer for NeurIPS 2020}\\
+\yr{2020}& {Reviewer for ICML 2020}\\
+\yr{2019}& {Reviewer for AISTATS 2020}\\
+\yr{2019}& {Reviewer for NeurIPS 2019}\\
+\\
+\multicolumn{2}{l}{\pos{Social Commitment (selection)}} \\
+\yr{2016 \to now} & {Charity ABC}\\
+\yr{2007 \to 2011} & {In some organization}\\[2ex]
+
+\pos{Leisure} & {I do all sorts of fun things in my free time.}\\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	Contact of co-workers
+%----------------------------------------------------------------------------------------
+\section{CONTACTS OF REFEREES}
+\begin{tabularx}{\textwidth}{rX}
+ First referee  & \href{mailto:first.referee@provider.com}{\url{first.referee@provider.com}} \sgright{University}\\
+ Second referee & \href{mailto:second.referee@provider.com}{\url{second.referee@provider.com}} \sgright{Institution}\\
+ Third referee & \href{mailto:third.referee@provider.com}{\url{third.referee@provider.com}}\sgright{Company}\\
+\end{tabularx}
+
+\end{document}
