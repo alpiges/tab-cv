@@ -11,8 +11,9 @@
 \ProcessOptions\relax
 \LoadClass{article}
 
-%%% PACKAGES
+%%% Page setup
 \RequirePackage[top=2.2cm, bottom=2.2cm, left=2.2cm, right=2.2cm]{geometry}
+\setlength\parindent{0pt}
 
 % Fonts & encoding
 \RequirePackage[T1]{fontenc}
