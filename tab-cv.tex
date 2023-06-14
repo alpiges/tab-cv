@@ -1,85 +1,23 @@
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tabular Academic CV
+%
+% by Alexandra Gessner
+% https://github.com/alpiges/tabCV
+% 
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[a4paper,10pt]{article} % Default font size and paper size
-
-\usepackage[top=2.2cm, bottom=2.2cm, left=2.2cm, right=2.2cm]{geometry}
-
-\usepackage[utf8]{inputenc}
-% \usepackage{lmodern}
-\usepackage[default]{lato}
-\usepackage[T1]{fontenc}
-
-\usepackage{url,parskip} % Formatting packages
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{supertabular}
-\usepackage{array}
-\usepackage{pbox}
-\usepackage{bold-extra}
-\usepackage{enumitem}
-\usepackage[official]{eurosym}
-\usepackage{fontawesome5}
-
-\usepackage{scrextend}
-\addtokomafont{labelinglabel}{\sffamily}
-
-% colors
-\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
-\definecolor{dgray}{gray}{.25}
-\definecolor{gray}{gray}{.35}
-\definecolor{lgray}{gray}{.6}
-
-\definecolor{mpg}{RGB}{000,125,122}
-\definecolor{lmu}{RGB}{000 148 064}
-\definecolor{dred}{RGB}{130,0,0}
-\definecolor{dblu}{RGB}{0,0,130}
-
-\colorlet{maincolor}{dred}
-
-
-%\usepackage[cm]{fullpage}
-% \textheight = 740pt
-% \textwidth = 410pt
-
-\usepackage{hyperref} % Required for adding links	and customizing them
-\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
-\hypersetup{colorlinks,breaklinks,urlcolor=maincolor,linkcolor=maincolor} % Set link colors throughout the document
-
-% sections and some sort of header
-\usepackage{titlesec} % Used to customize the \section command
-\titleformat{\section}{\bfseries\raggedright\color{maincolor}}{}{0em}{}[\titlerule] % Text formatting of sections
-\titlespacing{\section}{0pt}{12pt}{3pt} % Spacing around sections
-
-
-\newcommand{\headline}[1]{\par{\centering
-{\Large\textcolor{maincolor}{#1}}
-\bigskip\par}}
-
-
-\newcommand{\tabspace}{\rule{0pt}{3.5ex}}
-\newcommand{\inst}[1]{{\bfseries{{#1}}}}
-\newcommand{\pos}[1]{{\itshape\textcolor{maincolor}{#1}}}
-\newcommand{\grade}[1]{{\footnotesize[{#1}]}}
-\newcommand{\sgright}[1]{{\hfill\footnotesize\color{dgray}{{#1}}}}
-\newcommand{\yr}[1]{{\footnotesize\color{dgray}{{#1}}}}
-\newcommand{\scb}[1]{{\small\bfseries{#1}}}
-
-\DeclareSymbolFont{stmry}{U}{stmry}{m}{n}
-\DeclareMathSymbol\rightarrowtriangle\mathrel{stmry}{"5F}
-\renewcommand{\to}{$\rightarrowtriangle$~}
-
+\documentclass[a4paper, 10pt]{tab-cv}
 
 \begin{document}
 \pagestyle{empty} % Removes page numbering
 
 %----------------------------------------------------------------------------------------
-%	Name
+%	HEADER
 %----------------------------------------------------------------------------------------
 
-% header
-\headline{JOHN DOE}
+\header{JOHN DOE}
 
 %----------------------------------------------------------------------------------------
 %	Contact information
