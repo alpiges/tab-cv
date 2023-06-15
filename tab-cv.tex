@@ -14,124 +14,89 @@
 \pagestyle{empty} % Removes page numbering
 
 %----------------------------------------------------------------------------------------
-%	HEADER
-%----------------------------------------------------------------------------------------
-
-\header{JOHN DOE}
-
-%----------------------------------------------------------------------------------------
 %	Contact information
 %----------------------------------------------------------------------------------------
-\bigskip
-\begin{center}
-	Main street 1, 00000 City, Country\\ 
-	\href{mailto:johndoe@provider.com}{\url{johndoe@provider.com}}\\
-	\href{https://github.com/johndoe}{\faGithub \texttt{johndoe}} \hspace{2em} 
+
+\header{JOHN DOE}{
+	Main street 1, 00000 City, Country
+}{
+	\href{mailto:johndoe@provider.com}{\url{johndoe@provider.com}}
+}{
+	\href{https://github.com/johndoe}{\faGithub \texttt{johndoe}} 
+	\hskip2em 
 	\href{https://linkedin.com/in/johndoe}{\faLinkedin \texttt{John Doe}}%
 	% \href{https://twitter.com/johndoe}{\faTwitter \texttt{johndoe}}
-\end{center}
+}
+
 
 %----------------------------------------------------------------------------------------
 %	Experience
 %----------------------------------------------------------------------------------------
+
 \section{PROFESSIONAL EXPERIENCE}
-\begin{tabularx}{\textwidth}{rX}
-	\yr{07/19 \to 12/22} & \inst{Company} \sgright{City, Country} \newline \pos{Role} \small{this is what I did there}\\
-	\tabspace
-	%------------------------------------------------	
-	\yr{01/15 \to 06/19} & \inst{Previous, Company} \sgright{Other City, Country} \newline \pos{Role} \small{this is what I did there}\\
-	%------------------------------------------------	
-\end{tabularx}
+\begin{entrylist}	
+	\jobentry{07/19 \to 12/22}{Company}{City, Country}{Role}{this is what I did there}	
+	\jobentry{01/15 \to 06/19}{Previous, Company}{Other City, Country}{Role}{this is what I did there}
+\end{entrylist}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
+
 \section{ACADEMIC EDUCATION}
-
-\begin{tabularx}{\textwidth}{rX}
-%------------------------------------------------
-\yr{09/12 \to 08/15} & 
-			\inst{University} \sgright{City, Country}\newline
-			\pos{Ph.D. in Subject}  \newline
-	      	\small{\emph{Thesis:} Thesis title}\newline
-	      	\small{\emph{Any comments}}\\
-\tabspace
-%------------------------------------------------
-\yr{09/10 \to 08/12} & \inst{University} \sgright{City, Country}\newline
-	       \pos{M. Sc. in Science}\newline 
-		   \small{\emph{Thesis:} Thesis title}\newline
-		   \small{\emph{Any comments}}\\
-\tabspace
-%------------------------------------------------
-\yr{09/07 \to 07/10} & \inst{University} \sgright{City, Country} \newline
-	       \pos{B. Sc. in Science}\\
-%------------------------------------------------
-\end{tabularx}
-
-
+\begin{entrylist}
+	\eduentry{09/12 \to 08/15}{University}{City, Country}{Ph.D. in Subject}{Thesis title}{Any comments}
+	\eduentry{09/10 \to 08/12}{University}{City, Country}{M.Sc. in Subject}{Thesis title}{Any comments}
+	\eduentry{09/07 \to 07/10}{University}{City, Country}{B.Sc. in Subject}{Thesis title}{}
+\end{entrylist}
 
 %----------------------------------------------------------------------------------------
 %	Awards
 %----------------------------------------------------------------------------------------
+
 \section{AWARDS}
-\begin{tabularx}{\textwidth}{rX}
-\yr{year} & Name of award\\
-\end{tabularx}
+\begin{entrylist}
+	\entry{year}{Name of award}{}
+	\entry{year}{Name of award}{}
+\end{entrylist}
 
 %----------------------------------------------------------------------------------------
 %	Skills
 %----------------------------------------------------------------------------------------
+
 \section{SKILLS}
-\begin{tabularx}{\textwidth}{lX}
-\yr{LANGUAGES} & \small{\textbf{English} (native), \textbf{Esperanto} (fluent), \textbf{Wolof} (basic)}\\
-% \tabspace
-\yr{PROGRAMMING} & \small{{Fortran} (\texttt{libraries}), Haskell, LaTeX}
-\end{tabularx}
-
+\begin{entrylist}
+	\entry{LANGUAGES}{\small{\textbf{English} (native), \textbf{Esperanto} (fluent), \textbf{Wolof} (basic)}}{}
+	\entry{PROGRAMMING}{\small{{Fortran} (\texttt{libraries}), Haskell, LaTeX}}{}
+\end{entrylist}
 
 %----------------------------------------------------------------------------------------
-%	Conference contributions
+%	Publications
 %----------------------------------------------------------------------------------------
+
 \section{PUBLICATIONS}
-\begin{tabularx}{\textwidth}{rX}
-	\yr{2022} & First Author, \pos{John Doe}, \& Third Author\newline
-	\textbf{Title}\newline
-	\textit{Venue}\\
-	\tabspace
-	%------------------------------------------------
-	\yr{2021} & \pos{John Doe}, Second Author, \& Third Author\newline
-	\textbf{Title}\newline
-	\textit{Venue}\\
-	\tabspace
-	%------------------------------------------------
-	\yr{2020} & \pos{John Doe}, Second Author, \& Third Author\newline
-	\textbf{Title}\newline
-	\textit{Venue}\\
-	\tabspace
-	%------------------------------------------------
-	\yr{2019} & \pos{John Doe}, Second Author, \& Third Author\newline
-	\textbf{Title}\newline
-	\textit{Venue}\\
-	\tabspace
-	%------------------------------------------------
-	\yr{2018} & \pos{John Doe}, Second Author, \& Third Author\newline
-	\textbf{Title}\newline
-	\textit{Venue}\\
-\end{tabularx}
-
+\begin{entrylist}
+	\pubentry{2022}{First Author, \pos{John Doe}, \& Third Author}{Title}{Venue}
+	\pubentry{2021}{\pos{John Doe}, Second Author, \& Third Author}{Title}{Venue}
+	\pubentry{2020}{\pos{John Doe}, Second Author, \& Third Author}{Title}{Venue}
+	\pubentry{2019}{\pos{John Doe}, Second Author, \& Third Author}{Title}{Venue}
+	\pubentry{2018}{\pos{John Doe}, Second Author, \& Third Author}{Title}{Venue}
+	\pubentry{2017}{\pos{John Doe}, Second Author, \& Third Author}{Title}{Venue}
+	\pubentry{2016}{\pos{John Doe}, Second Author, \& Third Author}{Title}{Venue}
+\end{entrylist}
 
 %----------------------------------------------------------------------------------------
 %	Conference contributions
 %----------------------------------------------------------------------------------------
 \section{INVITED TALKS}
-\begin{tabularx}{\textwidth}{rX}
-\yr{10/2019}& {\emph{Some Cool Workshop} at Cool Place}\\
-\yr{10/2019}& {\emph{Some Cool Workshop} at Cool Place}\\
-\yr{04/2018}& {\emph{Some Cool Workshop} at Cool Place}\\
-\yr{05/2017}& {\emph{Some Cool Workshop} at Cool Place}\\
-\yr{10/2014}& {\emph{Some Cool Workshop} at Cool Place}\\
-\yr{09/2014}& {\emph{Some Cool Workshop} at Cool Place}
-\end{tabularx}
+\begin{entrylist}
+	\entry{10/2019}{\emph{Some Cool Workshop} at Cool Place}{}
+	\entry{10/2019}{\emph{Some Cool Workshop} at Cool Place}{}
+	\entry{04/2018}{\emph{Some Cool Workshop} at Cool Place}{}
+	\entry{05/2017}{\emph{Some Cool Workshop} at Cool Place}{}
+	\entry{10/2014}{\emph{Some Cool Workshop} at Cool Place}{}
+	\entry{09/2014}{\emph{Some Cool Workshop} at Cool Place}{}
+\end{entrylist}
 
 
 
@@ -139,61 +104,57 @@
 %	Teaching
 %----------------------------------------------------------------------------------------
 \section{TEACHING}
-\begin{tabularx}{\textwidth}{lX}
-\multicolumn{2}{l}{\pos{Lecturer}} \\
-\yr{2022} & My first own course, believe it or not\sgright{University} \\
-\\
-%
-\multicolumn{2}{l}{\pos{Teaching assistant}} \\
-\yr{2020} & {Some course}\sgright{University}\\
-\yr{2019} & {Other course}  \sgright{University}\\
-\yr{2019} & {Yet another course} \sgright{University}\\
-\yr{2018} & {Maybe the same as the first course}\sgright{University}\\
-\\
-%
-\multicolumn{2}{l}{\pos{Supervision of students}} \\
-\yr{2022} &  A Master student\\
-\yr{2021} &  Another Master student\\
-\yr{2020} &  A Bachelor student
-\end{tabularx}
+\begin{entrylist}
+	\entrysection{Lecturer}
+	\entry{2022}{My first own course, believe it or not}{University}
+	\\%
+	\entrysection{Teaching assistant}
+	\entry{2020}{Some course}{University}
+	\entry{2019}{Other course}{University}
+	\entry{2019}{Yet another course}{University}
+	\entry{2018}{Maybe the same as the first course}{University}
+	\\%
+	\entrysection{Supervision of students}{}
+	\entry{2022}{A Master student}{}
+	\entry{2021}{Another Master student}{}
+	\entry{2020}{A Bachelor student}{}
+\end{entrylist}
 
 
 %----------------------------------------------------------------------------------------
-%	Other stuff, attendances
+%	Other mentionable stuff
 %----------------------------------------------------------------------------------------
 \section{OTHER ACTIVITIES}
-\begin{tabularx}{\textwidth}{rX}
-\multicolumn{2}{l}{\pos{Workshops}} \\
-\yr{2022}& {Organized some workshop}\\
-\\
-\multicolumn{2}{l}{\pos{Summer schools and courses taken}} \\
-\yr{2019}& {A really interesting course}\sgright{University}\\
-\yr{01/2019}& {A fun Summer School}\sgright{University, Country}\\
-\yr{07/2018}& {Another Summer School}\sgright{University, Country}\\
-\\
-\multicolumn{2}{l}{\pos{Reviewing}} \\
-\yr{2020}& {Reviewer for AISTATS 2021}\\
-\yr{2020}& {Reviewer for NeurIPS 2020}\\
-\yr{2020}& {Reviewer for ICML 2020}\\
-\yr{2019}& {Reviewer for AISTATS 2020}\\
-\yr{2019}& {Reviewer for NeurIPS 2019}\\
-\\
-\multicolumn{2}{l}{\pos{Social Commitment (selection)}} \\
-\yr{2016 \to now} & {Charity ABC}\\
-\yr{2007 \to 2011} & {In some organization}\\[2ex]
-
-\pos{Leisure} & {I do all sorts of fun things in my free time.}\\
-\end{tabularx}
+\begin{entrylist}
+	\entrysection{Workshops}
+	\entry{2022}{Organized some workshop}{City, Country}
+	\\
+	\entrysection{Summer schools and courses taken}
+	\entry{2019}{A really interesting course}{University}
+	\entry{01/2019}{A fun Summer School}{University, Country}
+	\entry{07/2018}{Another Summer School}{University, Country}
+	\\
+	\entrysection{Reviewing}
+	\entry{2020}{Reviewer for ACONF 2021}{}
+	\entry{2020}{Reviewer for BCONF 2020}{}
+	\entry{2020}{Reviewer for ACONF 2020}{}
+	\entry{2019}{Reviewer for CCONF 2020}{}
+	\\
+	\entrysection{Social Commitment (selection)}
+	\entry{2016 \to now}{Charity ABC}{}
+	\entry{2007 \to 2011}{In some organization}{}
+	\\
+	\entry{Leisure}{I do all sorts of fun things in my free time.}{}
+\end{entrylist}
 
 
 %----------------------------------------------------------------------------------------
 %	Contact of co-workers
 %----------------------------------------------------------------------------------------
 \section{CONTACTS OF REFEREES}
-\begin{tabularx}{\textwidth}{rX}
- First referee  & \href{mailto:first.referee@provider.com}{\url{first.referee@provider.com}} \sgright{University}\\
- Second referee & \href{mailto:second.referee@provider.com}{\url{second.referee@provider.com}} \sgright{Institution}\\
- Third referee & \href{mailto:third.referee@provider.com}{\url{third.referee@provider.com}}\sgright{Company}\\
-\end{tabularx}
-
+\begin{entrylist}
+	\entry{\normalfont First referee}{\href{mailto:first.referee@provider.com}{\url{first.referee@provider.com}}}{University}
+	\entry{\normalfont Second referee}{\href{mailto:second.referee@provider.com}{\url{second.referee@provider.com}}}{Institution}
+	\entry{\normalfont Third referee}{\href{mailto:third.referee@provider.com}{\url{third.referee@provider.com}}}{Company}
+\end{entrylist}
 \end{document}
