@@ -20,12 +20,13 @@
 \header{JOHN DOE}{
 	Main street 1, 00000 City, Country
 }{
-	\href{mailto:johndoe@provider.com}{\url{johndoe@provider.com}}
+	johndoe@provider.com
 }{
-	\href{https://github.com/johndoe}{\faGithub \texttt{johndoe}} 
+	\github{https://github.com/johndoe}{{johndoe}} 
 	\hskip2em 
-	\href{https://linkedin.com/in/johndoe}{\faLinkedin \texttt{John Doe}}%
-	% \href{https://twitter.com/johndoe}{\faTwitter \texttt{johndoe}}
+	\linkedin{https://linkedin.com/in/johndoe}{{John Doe}}%
+	\hskip2em 
+	\twitter{https://twitter.com/johndoe}{{johndoe}}
 }
 
 
@@ -55,10 +56,10 @@
 %----------------------------------------------------------------------------------------
 
 \section{AWARDS}
-\begin{entrylist}
+\begin{tightentrylist}
 	\entry{year}{Name of award}{}
 	\entry{year}{Name of award}{}
-\end{entrylist}
+\end{tightentrylist}
 
 %----------------------------------------------------------------------------------------
 %	Skills
@@ -89,14 +90,14 @@
 %	Conference contributions
 %----------------------------------------------------------------------------------------
 \section{INVITED TALKS}
-\begin{entrylist}
+\begin{tightentrylist}
 	\entry{10/2019}{\emph{Some Cool Workshop} at Cool Place}{}
 	\entry{10/2019}{\emph{Some Cool Workshop} at Cool Place}{}
 	\entry{04/2018}{\emph{Some Cool Workshop} at Cool Place}{}
 	\entry{05/2017}{\emph{Some Cool Workshop} at Cool Place}{}
 	\entry{10/2014}{\emph{Some Cool Workshop} at Cool Place}{}
 	\entry{09/2014}{\emph{Some Cool Workshop} at Cool Place}{}
-\end{entrylist}
+\end{tightentrylist}
 
 
 
@@ -104,7 +105,7 @@
 %	Teaching
 %----------------------------------------------------------------------------------------
 \section{TEACHING}
-\begin{entrylist}
+\begin{tightentrylist}
 	\entrysection{Lecturer}
 	\entry{2022}{My first own course, believe it or not}{University}
 	\\%
@@ -118,14 +119,14 @@
 	\entry{2022}{A Master student}{}
 	\entry{2021}{Another Master student}{}
 	\entry{2020}{A Bachelor student}{}
-\end{entrylist}
+\end{tightentrylist}
 
 
 %----------------------------------------------------------------------------------------
 %	Other mentionable stuff
 %----------------------------------------------------------------------------------------
 \section{OTHER ACTIVITIES}
-\begin{entrylist}
+\begin{tightentrylist}
 	\entrysection{Workshops}
 	\entry{2022}{Organized some workshop}{City, Country}
 	\\
@@ -145,16 +146,18 @@
 	\entry{2007 \to 2011}{In some organization}{}
 	\\
 	\entry{Leisure}{I do all sorts of fun things in my free time.}{}
-\end{entrylist}
+\end{tightentrylist}
 
 
 %----------------------------------------------------------------------------------------
 %	Contact of co-workers
 %----------------------------------------------------------------------------------------
 \section{CONTACTS OF REFEREES}
-\begin{entrylist}
+\begin{tightentrylist}
 	\entry{\normalfont First referee}{\href{mailto:first.referee@provider.com}{\url{first.referee@provider.com}}}{University}
 	\entry{\normalfont Second referee}{\href{mailto:second.referee@provider.com}{\url{second.referee@provider.com}}}{Institution}
 	\entry{\normalfont Third referee}{\href{mailto:third.referee@provider.com}{\url{third.referee@provider.com}}}{Company}
-\end{entrylist}
+\end{tightentrylist}
+
+\lastupdated{\today}
 \end{document}

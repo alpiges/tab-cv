@@ -21,27 +21,40 @@
 \RequirePackage[default]{lato}
 
 % Tabular
-\usepackage{tabularx}
+\RequirePackage{tabularx}
+\RequirePackage{booktabs}
 
 % Symbols
-\usepackage{fontawesome5}
+\RequirePackage{fontawesome5}
 
 % Colors
-\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
-\definecolor{dgray}{gray}{.25}
-\definecolor{gray}{gray}{.35}
+\RequirePackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
+\definecolor{dgray}{gray}{.3}
+\definecolor{gray}{gray}{.4}
 \definecolor{lgray}{gray}{.6}
 
 \definecolor{dred}{RGB}{130,0,0}
-\definecolor{dblu}{RGB}{0,0,130}
+\definecolor{dblu}{RGB}{10,90,130}
 
-\colorlet{maincolor}{dred}
+\colorlet{maincolor}{dblu}
 
 % Links
-\usepackage{hyperref} % Required for adding links	and customizing them
+\RequirePackage{hyperref} % Required for adding links	and customizing them
 \hypersetup{colorlinks,breaklinks,urlcolor=maincolor,linkcolor=maincolor} % Set link colors throughout the document
 
 \RequirePackage{ifthen}
+
+% ICONS
+\newcommand{\infofield}[2]{\mbox{\makebox[2ex]{\textcolor{maincolor}{\normalsize #1}} #2}}
+\newcommand{\email}[1]{\infofield{\faEnvelope}{\href{mailto:#1}{\texttt{#1}}}}
+\newcommand{\address}[1]{\infofield{\faAt}{#1}}
+\newcommand{\location}[1]{\infofield{\faMapMarker}{#1}}
+\newcommand{\phone}[1]{\infofield{\faPhone}{#1}}
+\newcommand{\homepage}[2]{\infofield{\faHome}{\href{#1}{#2}}}
+\newcommand{\linkedin}[2]{\infofield{\faLinkedin}{\href{#1}{#2}}}
+\newcommand{\github}[2]{\infofield{\faGithub}{\href{#1}{\texttt{#2}}}}
+\newcommand{\twitter}[2]{\infofield{\faTwitter}{\href{#1}{\texttt{@#2}}}}
+\newcommand{\mastodon}[2]{\infofield{\faMastodon}{\href{#1}{\texttt{#2}}}}
 
 
 %------------------------------------------------
@@ -52,31 +65,43 @@
 \newcommand{\header}[4]{\par{\centering
 {\Large\textcolor{maincolor}{#1}} % Name
 \bigskip\par}{\par{\centering
-	#2\par % Address 
-  #3\par % E-mail
+	\location{#2}\par\vskip0.5ex % Address 
+  \email{#3}\par\vskip0.5ex % E-mail
   #4\par % other information
 }}
 }
 
+\newcommand{\aboutme}[1]{
+  \vskip\baselineskip
+  \begin{tabularx}{\textwidth}{rX}
+    \bfseries\color{maincolor}{\small ABOUT} & \textcolor{dgray}{\small #1}
+  \end{tabularx}
+}
+
+% FOOTER
+\RequirePackage{tikz}
+\newcommand{\lastupdated}[1]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node [anchor=south east, xshift=-1ex, yshift=0.5em] at (current page.south east){%
+    \color{gray}%
+    \footnotesize Last updated on #1
+    };
+  \end{tikzpicture}
+  \vspace{-2\parskip}
+}
+
 % SECTIONS
-\usepackage{titlesec} % Used to customize the \section command
+\RequirePackage{titlesec} % Used to customize the \section command
 \titleformat{\section}{\bfseries\raggedright\color{maincolor}}{}{0em}{}[\titlerule] % Text formatting of sections
 \titlespacing{\section}{0pt}{12pt}{3pt} % Spacing around sections
-
-% LIST
-% \newenvironment{entrylist}{%
-%   \begin{tabular*}{\textwidth}{rX}
-% }{%
-%   \end{tabular*}
-% }
 
 % ENTRIES
 \newcommand{\tabspace}{\rule{0pt}{3.5ex}}
 \newcommand{\inst}[1]{{\bfseries{{#1}}}}
 \newcommand{\pos}[1]{{\itshape\textcolor{maincolor}{#1}}}
-\newcommand{\task}[1]{{\small\textcolor{dgray}{#1}}}
+\newcommand{\task}[1]{{\small{#1}}}
 \newcommand{\grade}[1]{{\footnotesize[graded{#1}]}}
-\newcommand{\sgright}[1]{{\hfill\footnotesize\color{gray}{{#1}}}}
+\newcommand{\sgright}[1]{{\hfill\footnotesize\color{dgray}{{#1}}}}
 \newcommand{\yr}[1]{{\footnotesize\color{dgray}{{#1}}}}
 \newcommand{\scb}[1]{{\small\bfseries{#1}}}
 
@@ -84,23 +109,19 @@
 \DeclareMathSymbol\rightarrowtriangle\mathrel{stmry}{"5F}
 \renewcommand{\to}{$\rightarrowtriangle$~}
 
-
-% \newcommand{\entry}[5]{%
-%   % \hangindent=3mm \hangafter1% 
-%   {\leavevmode\yr{#1}}& %\parbox[t]{\textwidth}{%
-%   \inst{#2}
-%   \sgright{#3}\\
-%   % \pos{#4} \small{#5}}\\
-% }
-
-% \RequirePackage{parskip}
-
 \newenvironment{entrylist}{%
+  \renewcommand{\arraystretch}{1.5}
   \tabularx{\textwidth}{rX}
 }{%
   \endtabularx
 }
-% \renewcommand{\bfseries}{\headingfont\color{headercolor}}
+
+\newenvironment{tightentrylist}{%
+  % \renewcommand{\arraystretch}{1}
+  \tabularx{\textwidth}{rX}
+}{%
+  \endtabularx
+}
 
 % Plain entry, can be adapted individually
 \newcommand{\entry}[3]{%
