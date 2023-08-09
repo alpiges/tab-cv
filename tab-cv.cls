@@ -20,9 +20,18 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[default]{lato}
 
+\newcommand{\bodyfont}{\fontseries{l}\selectfont}
+\newcommand{\thinfont}{\fontseries{el}\selectfont}
+\newcommand{\semibold}{\fontseries{sb}\selectfont}
+
+\newcommand{\textsb}[1]{{\semibold #1}}
+
 % Tabular
 \RequirePackage{tabularx}
 \RequirePackage{booktabs}
+
+% Lists
+\RequirePackage{enumitem}
 
 % Symbols
 \RequirePackage{fontawesome5}
@@ -34,9 +43,14 @@
 \definecolor{lgray}{gray}{.6}
 
 \definecolor{dred}{RGB}{130,0,0}
-\definecolor{dblu}{RGB}{10,90,130}
+\definecolor{dblu}{RGB}{0,0,130}
+\definecolor{blu}{RGB}{10,90,130}
 
-\colorlet{maincolor}{dblu}
+\colorlet{maincolor}{blu}
+
+\DeclareTextFontCommand{\note}{\color{gray}\em}
+
+\renewcommand{\labelitemi}{\color{maincolor}{\textbullet}}
 
 % Links
 \RequirePackage{hyperref} % Required for adding links	and customizing them
@@ -62,19 +76,45 @@
 %------------------------------------------------
 
 % HEADER
-\newcommand{\header}[4]{\par{\centering
-{\Large\textcolor{maincolor}{#1}} % Name
-\bigskip\par}{\par{\centering
-	\location{#2}\par\vskip0.5ex % Address 
-  \email{#3}\par\vskip0.5ex % E-mail
-  #4\par % other information
-}}
+\RequirePackage{tikz}
+
+\colorlet{headerfill}{maincolor!30!dgray}
+\colorlet{headertext}{white}
+
+
+\newcommand{\header}[3]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node [rectangle, fill=headerfill, anchor=north, minimum width=\paperwidth,
+minimum height=2.8cm, yshift=1mm] (box) at (current page.north){};
+    \node [anchor=center, yshift=1mm] (name) at (box) {%
+      \fontsize{36pt}{48pt}\color{headertext}%
+      {\thinfont #1}\hskip1em{\bodyfont  #2}
+    };
+    \node [anchor=north] at (name.south) {%
+      \fontsize{15pt}{20pt}\color{headertext}%
+      \thinfont #3%
+    };
+  \end{tikzpicture}
+  \vspace{1.5ex}
 }
+
+\newcommand{\addressline}[3]{%}
+  \begin{tikzpicture}[remember picture,overlay]
+    \node [rectangle, fill=lgray!30, anchor=north, minimum width=\paperwidth,
+    minimum height=1.2cm, yshift=-2.7cm] (box) at (current page.north){};
+    \node [anchor=center, yshift=-0.5mm, align=center] (name) at (box) {%
+    \location{#1}\\[0.3ex] % Address 
+    \email{#2} \hskip2em % E-mail
+    #3 % other information
+    };
+  \end{tikzpicture}
+  \vspace{2.5ex}
+  }
 
 \newcommand{\aboutme}[1]{
   \vskip\baselineskip
   \begin{tabularx}{\textwidth}{rX}
-    \bfseries\color{maincolor}{\small ABOUT} & \textcolor{dgray}{\small #1}
+    \bfseries\color{maincolor}{ABOUT} & \task{#1}
   \end{tabularx}
 }
 
